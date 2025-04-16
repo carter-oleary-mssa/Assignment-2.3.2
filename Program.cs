@@ -11,11 +11,11 @@ do
     Console.Write("Enter bill total: ");
     decimal bill = Convert.ToDecimal(Console.ReadLine());
     Console.Write("Enter tip %: ");
-    decimal tipPercent = Convert.ToDecimal(Console.ReadLine());
+    decimal tip = Convert.ToDecimal(Console.ReadLine())/100;
 
     // Calculate tip amount and print formatted total
-    decimal tipAmount = bill * (tipPercent/100);
-    Console.WriteLine($"Your tip is {(tipAmount).ToString("C", ci)}");
+    decimal tipAmount = bill * tip;
+    Console.WriteLine($"A {tip.ToString("P0", ci)} tip is {(tipAmount).ToString("C", ci)}");
     Console.WriteLine($"The grand total for your bill is: {(bill + tipAmount).ToString("C", ci)}");
 
     // Check for exit condition from user
